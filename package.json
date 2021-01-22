@@ -47,12 +47,12 @@
     "ajax",
     "material"
   ],
-  "author": "H.Alper Tuna <halpertuna@gmail.com>",
+  "author": "Hakan Cunier <hakan.cunier@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alpertuna/react-metismenu/issues"
+    "url": "https://github.com/javastud/react-metismenu/issues"
   },
-  "homepage": "https://github.com/alpertuna/react-metismenu#readme",
+  "homepage": "https://github.com/javastud/react-metismenu#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.2.0",
