@@ -20,6 +20,8 @@ const flattenLevel = (content, parentId) => {
       label: item.label,
       to: item.to,
       externalLink: item.externalLink,
+      badgeClass: item.badgeClass,
+      badgeValue: item.badgeValue,
       active: false,
       hasActiveChild: false,
       subMenuVisibility: false,

@@ -23,6 +23,8 @@ const Item = ({
   activateMe,
   reduxStoreName,
   reduxUid,
+  badgeClass,
+  badgeValue
 }, {
   classStore,
   LinkComponent,
@@ -51,6 +53,7 @@ const Item = ({
     >
       <i className={classnames(classStore.classIcon, classStore.iconNamePrefix + icon)} />
       {label}
+      {badgeValue && <span className={"badge "+(badgeClass?badgeClass:"")}>{badgeValue}</span>}
       {hasSubMenu && <i
         className={classnames(
           classStore.classStateIcon,

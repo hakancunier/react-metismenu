@@ -24,8 +24,10 @@ const menu1 = [
   {
     id: 2,
     icon: 'bell',
-    label: 'Menu 2',
+    label: 'Menu 2new',
     to: '#menu-2',
+    badgeClass:"badge-secondary",
+    badgeValue:"New"
   },
   {
     id: 3,
@@ -37,6 +39,8 @@ const menu1 = [
         icon: 'bolt',
         label: 'Test',
         to: '#test',
+        badgeClass:"badge-secondary",
+        badgeValue:"7"
       },
     ],
   },
