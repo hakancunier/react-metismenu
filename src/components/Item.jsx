@@ -23,9 +23,9 @@ const Item = ({
     activateMe,
     reduxStoreName,
     reduxUid,
+    notAuthorized,//see flattencontent.js
     badgeClass,
-    badgeValue,
-    notAuthorized
+    badgeValue
 }, {
     classStore,
     LinkComponent,
