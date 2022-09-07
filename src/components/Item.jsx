@@ -51,6 +51,7 @@ const Item = ({
             hasSubMenu={hasSubMenu}
             toggleSubMenu={toggleSubMenu}
             activateMe={activateMe}
+            notAuthorized={notAuthorized}
         >
             <i className={classnames(classStore.classIcon, classStore.iconNamePrefix + icon, notAuthorized ? "not-authorized" : null)} />
             {label}
