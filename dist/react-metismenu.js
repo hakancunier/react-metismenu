@@ -5494,9 +5494,9 @@ var Item = function Item(_ref, _ref2) {
         activateMe = _ref.activateMe,
         reduxStoreName = _ref.reduxStoreName,
         reduxUid = _ref.reduxUid,
+        notAuthorized = _ref.notAuthorized,
         badgeClass = _ref.badgeClass,
-        badgeValue = _ref.badgeValue,
-        notAuthorized = _ref.notAuthorized;
+        badgeValue = _ref.badgeValue;
     var classStore = _ref2.classStore,
         LinkComponent = _ref2.LinkComponent;
     return _react2.default.createElement(
