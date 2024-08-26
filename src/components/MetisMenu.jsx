@@ -138,15 +138,15 @@ class MetisMenu extends React.Component {
     this.store.dispatch(changeActiveLinkLabel(this.reduxUid, value));
   }
 
-  changeActiveLinkFromLocation() {
-    this.store.dispatch(changeActiveLinkFromLocation(this.reduxUid));
+  changeActiveLinkFromLocation(value) {
+    this.store.dispatch(changeActiveLinkFromLocation(this.reduxUid, value));
   }
 
   updateActiveLink(props) {
     if (props.activeLinkId) this.changeActiveLinkId(props.activeLinkId);
     else if (props.activeLinkTo) this.changeActiveLinkTo(props.activeLinkTo);
     else if (props.activeLinkLabel) this.changeActiveLinkLabel(props.activeLinkLabel);
-    else if (props.activeLinkFromLocation) this.changeActiveLinkFromLocation();
+    else if (props.activeLinkFromLocation) this.changeActiveLinkFromLocation(props.basePath);
   }
 
   updateRemoteContent(props) {

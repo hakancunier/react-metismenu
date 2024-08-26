@@ -36,7 +36,9 @@ export const changeActiveLinkLabel = (reduxUid, value) => ({
   propName: 'label',
   value,
 });
-export const changeActiveLinkFromLocation = reduxUid => ({
+export const changeActiveLinkFromLocation = (reduxUid, value) => ({
   type: 'CHANGE_ACTIVE_LINK_FROM_LOCATION',
   reduxUid,
+  propName: 'basePath',
+  value
 });

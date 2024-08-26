@@ -53,16 +53,23 @@ const content = (state = [], action) => {
           window.location.pathname.slice(1) + window.location.search + window.location.hash,
           // path?s#hash
         ];
+        /*[
+            "/app/uretim/malzemeagacilist",
+            "/app/uretim/malzemeagacilist",
+            "app/uretim/malzemeagacilist",
+            "app/uretim/malzemeagacilist"
+        ]*/
         if (window.location.hash.startsWith('#')) {
           locationSets.push(window.location.hash.substring(1));
         }
-        activeItem = state.find(i => locationSets.indexOf(i.to) !== -1);
+        activeItem = state.find(i => locationSets.indexOf((action.value || '')+i.to) !== -1);
       } else {
         activeItem = findItem(state, action.value, action.propName);
       }
 
       // If metismenu user tries to activate non-exist item
-      if (!activeItem) return state;
+      if (!activeItem)
+        return state;
 
       const { id, parentId, trace } = activeItem;
       const stage = state.map(i => item(i, Object.assign({ id, trace }, action)));

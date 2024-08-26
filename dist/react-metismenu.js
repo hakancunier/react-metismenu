@@ -628,10 +628,12 @@ var changeActiveLinkLabel = exports.changeActiveLinkLabel = function changeActiv
     value: value
   };
 };
-var changeActiveLinkFromLocation = exports.changeActiveLinkFromLocation = function changeActiveLinkFromLocation(reduxUid) {
+var changeActiveLinkFromLocation = exports.changeActiveLinkFromLocation = function changeActiveLinkFromLocation(reduxUid, value) {
   return {
     type: 'CHANGE_ACTIVE_LINK_FROM_LOCATION',
-    reduxUid: reduxUid
+    reduxUid: reduxUid,
+    propName: 'basePath',
+    value: value
   };
 };
 
@@ -1880,13 +1882,13 @@ var MetisMenu = function (_React$Component) {
     }
   }, {
     key: 'changeActiveLinkFromLocation',
-    value: function changeActiveLinkFromLocation() {
-      this.store.dispatch((0, _content.changeActiveLinkFromLocation)(this.reduxUid));
+    value: function changeActiveLinkFromLocation(value) {
+      this.store.dispatch((0, _content.changeActiveLinkFromLocation)(this.reduxUid, value));
     }
   }, {
     key: 'updateActiveLink',
     value: function updateActiveLink(props) {
-      if (props.activeLinkId) this.changeActiveLinkId(props.activeLinkId);else if (props.activeLinkTo) this.changeActiveLinkTo(props.activeLinkTo);else if (props.activeLinkLabel) this.changeActiveLinkLabel(props.activeLinkLabel);else if (props.activeLinkFromLocation) this.changeActiveLinkFromLocation();
+      if (props.activeLinkId) this.changeActiveLinkId(props.activeLinkId);else if (props.activeLinkTo) this.changeActiveLinkTo(props.activeLinkTo);else if (props.activeLinkLabel) this.changeActiveLinkLabel(props.activeLinkLabel);else if (props.activeLinkFromLocation) this.changeActiveLinkFromLocation(props.basePath);
     }
   }, {
     key: 'updateRemoteContent',
@@ -5793,11 +5795,17 @@ var content = function content() {
           window.location.pathname + window.location.search + window.location.hash, // /path?s#hash
           window.location.pathname.slice(1) + window.location.search, // path?search
           window.location.pathname.slice(1) + window.location.search + window.location.hash];
+          /*[
+              "/app/uretim/malzemeagacilist",
+              "/app/uretim/malzemeagacilist",
+              "app/uretim/malzemeagacilist",
+              "app/uretim/malzemeagacilist"
+          ]*/
           if (window.location.hash.startsWith('#')) {
             locationSets.push(window.location.hash.substring(1));
           }
           activeItem = state.find(function (i) {
-            return locationSets.indexOf(i.to) !== -1;
+            return locationSets.indexOf((action.value || '') + i.to) !== -1;
           });
         } else {
           activeItem = findItem(state, action.value, action.propName);
