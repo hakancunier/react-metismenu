@@ -258,6 +258,7 @@ MetisMenu.propTypes = {
   ]),
   activeLinkTo: PropTypes.string,
   activeLinkLabel: PropTypes.string,
+  basePath: PropTypes.string,
   activeLinkFromLocation: PropTypes.bool,
 
   onSelected: PropTypes.func,

@@ -1,6 +1,6 @@
 {
   "name": "react-metismenu-badge",
-  "version": "1.4.6",
+  "version": "1.4.8",
   "description": "A ready / simple to use, highly customizable, updateable, ajax supported, animated and material designed menu component for React",
   "main": "lib/index.js",
   "scripts": {
