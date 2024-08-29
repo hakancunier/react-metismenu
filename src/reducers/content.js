@@ -62,7 +62,7 @@ const content = (state = [], action) => {
         if (window.location.hash.startsWith('#')) {
           locationSets.push(window.location.hash.substring(1));
         }
-        //console.info("action",action,locationSets);
+        //console.info("action",action);
         activeItem = state.find(i => locationSets.indexOf((action.value || '')+i.to) !== -1);
       } else {
         activeItem = findItem(state, action.value, action.propName);
